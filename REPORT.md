@@ -7,8 +7,6 @@
 
 ## Business problem, and the cost of being wrong
 
-## Business problem, and the cost of being wrong
-
 ### The decision
 A regional grid operator has a network of approximately 10,000 km of high voltage overhead lines. An annual inspection is performed using drones, this equates to approximately 45km of lines to inspect each day across the 220 working days per year. As there are approximately 3 towers per km and 6 insulators per tower this amounts to approximately 800 images of insulators. These are currently reviewed by an engineer. The model takes over this task and classifies the images into 3 categories:
 
