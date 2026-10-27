@@ -1,0 +1,5 @@
+strategy,cost_per_1000,reviewers_needed,review_share,cost_per_day
+Do nothing (no inspection model),100000.0,0.0,0.0,200000.0
+Engineer reviews every photo,16250.0,1.8518518518518519,1.0,32500.0
+Model alone (t=0.01),95094.8905109489,0.0,0.0,190189.7810218978
+"Model + review band [0.01, 0.01)",95094.8905109489,1.5419764230904951e-18,8.326672684688674e-19,190189.7810218978

@@ -26,7 +26,7 @@
 - **Why it serves the decision (and where it only resembles it):** ✍️
 
 ### Re-split (important)
-The published v1 has **958 train / 141 valid / 0 test**, and filenames show pre-augmented copies of the same photo (`160605_JPG`, `160605d_JPG`, `160605v_JPG`…). `train.py` pools all images, groups copies by photo id, and makes a seeded 70/15/15 split by photo, so no photo appears in two splits. Result: `artifacts/dataset_stats.json → resplit`, per-image mapping: `artifacts/split_manifest.csv`.
+The published v1 has **958 train / 141 valid / 0 test**, and filenames show pre-augmented copies of the same photo (`160605_JPG`, `160605d_JPG`, `160605v_JPG`…). `train.ipynb` pools all images, groups copies by photo id, and makes a seeded 70/15/15 split by photo, so no photo appears in two splits. Result: `artifacts/dataset_stats.json → resplit`, per-image mapping: `artifacts/split_manifest.csv`.
 
 ✍️ Why you did this, and how many photos were leaking across the published train/valid split.
 
