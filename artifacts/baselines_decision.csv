@@ -1,4 +1,4 @@
 model,image_level_AUC,best_threshold,best_cost_per_1000,recall_at_best,precision_at_best
-Finetuned yolo11n (max fault score),0.46449900464499005,0.01,95094.8905109489,0.058394160583941604,1.0
-COCO yolo11n zero-shot (max any-class score),0.4877239548772396,0.81,98773.72262773724,0.014598540145985401,1.0
-Trivial: predict nothing,0.5,0.01,100000.0,0.0,
+Finetuned yolo11n (max fault score),0.8636363636363636,0.83,196968.55775803147,0.7293233082706767,0.9897959183673469
+COCO yolo11n zero-shot (max any-class score),0.48359535201640463,0.81,394436.0902255639,0.015037593984962405,1.0
+Trivial: predict nothing,0.5,0.01,400000.0,0.0,

@@ -13,9 +13,9 @@
       "valid": 141
     },
     "new_split_images": {
-      "train": 768,
-      "valid": 172,
-      "test": 159
+      "train": 771,
+      "valid": 173,
+      "test": 155
     },
     "unique_photos": 397,
     "images_per_photo_mean": 2.77,
@@ -23,140 +23,104 @@
   },
   "splits": {
     "train": {
-      "images": 768,
+      "images": 771,
       "background_images": 0,
       "instances": {
         "brokeninsulator": 501,
         "brokenpart": 646,
         "defect": 112,
-        "insulator": 557
+        "insulator": 560
       },
       "images_with_class": {
         "brokeninsulator": 489,
         "brokenpart": 489,
         "defect": 92,
-        "insulator": 392
+        "insulator": 395
       },
       "object_size": {
         "brokeninsulator": {
           "median_area_pct": 48.883628845214844,
-          "p10_area_pct": 21.42791748046875,
-          "p90_area_pct": 65.10562896728516,
-          "share_below_1pct": 0.001996007984031936,
-          "median_side_px_at_imgsz": 357.97416107870134
+          "share_below_1pct": 0.001996007984031936
         },
         "brokenpart": {
           "median_area_pct": 27.853679656982422,
-          "p10_area_pct": 17.52185821533203,
-          "p90_area_pct": 39.10999298095703,
-          "share_below_1pct": 0.0,
-          "median_side_px_at_imgsz": 270.2161170954766
+          "share_below_1pct": 0.0
         },
         "defect": {
           "median_area_pct": 26.207256317138672,
-          "p10_area_pct": 10.136623382568361,
-          "p90_area_pct": 40.31217575073242,
-          "share_below_1pct": 0.008928571428571428,
-          "median_side_px_at_imgsz": 262.1066141161321
+          "share_below_1pct": 0.008928571428571428
         },
         "insulator": {
-          "median_area_pct": 38.7908935546875,
-          "p10_area_pct": 4.817466735839844,
-          "p90_area_pct": 63.216133117675795,
-          "share_below_1pct": 0.02333931777378815,
-          "median_side_px_at_imgsz": 318.88555940964153
+          "median_area_pct": 38.91181945800781,
+          "share_below_1pct": 0.023214285714285715
         }
       }
     },
     "valid": {
-      "images": 172,
+      "images": 173,
       "background_images": 0,
       "instances": {
-        "brokeninsulator": 127,
-        "brokenpart": 149,
+        "brokeninsulator": 131,
+        "brokenpart": 153,
         "defect": 18,
-        "insulator": 90
+        "insulator": 87
       },
       "images_with_class": {
-        "brokeninsulator": 121,
-        "brokenpart": 123,
+        "brokeninsulator": 125,
+        "brokenpart": 127,
         "defect": 16,
-        "insulator": 73
+        "insulator": 70
       },
       "object_size": {
         "brokeninsulator": {
           "median_area_pct": 43.603515625,
-          "p10_area_pct": 17.846450805664062,
-          "p90_area_pct": 72.07954406738281,
-          "share_below_1pct": 0.0,
-          "median_side_px_at_imgsz": 338.088745745847
+          "share_below_1pct": 0.0
         },
         "brokenpart": {
           "median_area_pct": 28.590774536132812,
-          "p10_area_pct": 18.641929626464844,
-          "p90_area_pct": 41.006317138671875,
-          "share_below_1pct": 0.0,
-          "median_side_px_at_imgsz": 273.76815008324104
+          "share_below_1pct": 0.0
         },
         "defect": {
           "median_area_pct": 31.927776336669922,
-          "p10_area_pct": 12.404270172119142,
-          "p90_area_pct": 45.92924118041992,
-          "share_below_1pct": 0.0,
-          "median_side_px_at_imgsz": 289.30062874891485
+          "share_below_1pct": 0.0
         },
         "insulator": {
-          "median_area_pct": 40.64045926922536,
-          "p10_area_pct": 6.974220275878906,
-          "p90_area_pct": 70.11463165283203,
-          "share_below_1pct": 0.03333333333333333,
-          "median_side_px_at_imgsz": 326.39147108823926
+          "median_area_pct": 39.65473175048828,
+          "share_below_1pct": 0.034482758620689655
         }
       }
     },
     "test": {
-      "images": 159,
+      "images": 155,
       "background_images": 0,
       "instances": {
-        "brokeninsulator": 122,
-        "brokenpart": 148,
+        "brokeninsulator": 118,
+        "brokenpart": 144,
         "defect": 16,
         "insulator": 70
       },
       "images_with_class": {
-        "brokeninsulator": 122,
-        "brokenpart": 123,
+        "brokeninsulator": 118,
+        "brokenpart": 119,
         "defect": 14,
         "insulator": 60
       },
       "object_size": {
         "brokeninsulator": {
           "median_area_pct": 49.498653411865234,
-          "p10_area_pct": 24.38020706176758,
-          "p90_area_pct": 64.44391250610352,
-          "share_below_1pct": 0.0,
-          "median_side_px_at_imgsz": 360.2185859605265
+          "share_below_1pct": 0.0
         },
         "brokenpart": {
-          "median_area_pct": 28.22866439819336,
-          "p10_area_pct": 19.949970245361328,
-          "p90_area_pct": 40.72614669799805,
-          "share_below_1pct": 0.0,
-          "median_side_px_at_imgsz": 272.0288857432363
+          "median_area_pct": 28.172016143798828,
+          "share_below_1pct": 0.0
         },
         "defect": {
           "median_area_pct": 26.16405487060547,
-          "p10_area_pct": 10.759544372558594,
-          "p90_area_pct": 39.76573944091797,
-          "share_below_1pct": 0.0,
-          "median_side_px_at_imgsz": 261.8770727041192
+          "share_below_1pct": 0.0
         },
         "insulator": {
           "median_area_pct": 29.180622100830078,
-          "p10_area_pct": 1.4596939086914062,
-          "p90_area_pct": 58.87752532958985,
-          "share_below_1pct": 0.07142857142857142,
-          "median_side_px_at_imgsz": 276.5758889325827
+          "share_below_1pct": 0.07142857142857142
         }
       }
     }

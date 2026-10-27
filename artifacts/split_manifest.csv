@@ -272,9 +272,9 @@ image,photo_id,original_split,new_split
 150633h_JPG_jpg.rf.20fc8d9b17f7bbd1e5eac2c672ae2f18.jpg,150633,train,valid
 150633v_JPG_jpg.rf.a193f531ade33dfe0a5ceb123a044061.jpg,150633,train,valid
 150638-2-_JPG_jpg.rf.5ca2019cfe7bc32624cc32950dec0a79.jpg,150638-2-,train,train
-150638-2-d_JPG_jpg.rf.5599ec373594a05cfcc97fc5ec3fb3cb.jpg,150638-2,train,valid
-150638-2-h_JPG_jpg.rf.5153c61193ccd909a3678b9d30fa045d.jpg,150638-2,train,valid
-150638-2-v_JPG_jpg.rf.5d0cb4a2e4fa64da4641095a6ff30a2e.jpg,150638-2,train,valid
+150638-2-d_JPG_jpg.rf.5599ec373594a05cfcc97fc5ec3fb3cb.jpg,150638-2,train,train
+150638-2-h_JPG_jpg.rf.5153c61193ccd909a3678b9d30fa045d.jpg,150638-2,train,train
+150638-2-v_JPG_jpg.rf.5d0cb4a2e4fa64da4641095a6ff30a2e.jpg,150638-2,train,train
 150648-2-_JPG_jpg.rf.e5a64fc8f04dc07ddc5db73f8d2f1044.jpg,150648-2-,train,train
 150648-2-d_JPG_jpg.rf.eb4a4d107d34947e75ac8ef54d81d7d4.jpg,150648-2,train,test
 150664-2-_JPG_jpg.rf.bca561714d3d0c512710107e551f1250.jpg,150664-2-,train,train
@@ -504,10 +504,10 @@ image,photo_id,original_split,new_split
 161409h_JPG_jpg.rf.cb1fb16d4ff5adec538ce05f6781e185.jpg,161409,train,train
 161410v_JPG_jpg.rf.71ff62e4d3a1cceca66077159455c1c9.jpg,161410,train,train
 161437h_JPG_jpg.rf.fc90259791cb43eebafe90d5ede32b2e.jpg,161437,train,train
-161466_JPG_jpg.rf.05391366cdb09b7932f8aa3d58cfd2bd.jpg,161466,train,test
-161466d_JPG_jpg.rf.d6310f7e097152202cbc7ad3bc901986.jpg,161466,train,test
-161466h_JPG_jpg.rf.e661371ce1106269916c6d4b5ddd18ea.jpg,161466,train,test
-161466v_JPG_jpg.rf.7990bccbc19406eb0ff8df67e3e1c2ff.jpg,161466,train,test
+161466_JPG_jpg.rf.05391366cdb09b7932f8aa3d58cfd2bd.jpg,161466,train,valid
+161466d_JPG_jpg.rf.d6310f7e097152202cbc7ad3bc901986.jpg,161466,train,valid
+161466h_JPG_jpg.rf.e661371ce1106269916c6d4b5ddd18ea.jpg,161466,train,valid
+161466v_JPG_jpg.rf.7990bccbc19406eb0ff8df67e3e1c2ff.jpg,161466,train,valid
 161500_JPG_jpg.rf.7c5cf004c2b52585265a3ca3e20ac316.jpg,161500,train,valid
 161500d_JPG_jpg.rf.f8697b3042393d89512b51ea47664e26.jpg,161500,train,valid
 161500h_JPG_jpg.rf.ae9fe2c0a61e7fae04f84143800928d8.jpg,161500,train,valid
