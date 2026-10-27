@@ -122,10 +122,12 @@ Positive = a photo with a `defect`, `brokeninsulator` or `brokenpart`.
 | insulator | 0.747 | 0.943 | 0.811 | 0.754 |
 | **overall** | 0.840 | 0.719 | 0.752 | 0.630 |
 
-The headline comes mostly from `brokeninsulator`: missing discs are big and obvious. The weak spot
-is `defect`, where the model finds only ~6 of 16 subtle surface marks. That is the most expensive
-mistake, since each miss costs €20,000. `brokenpart` is usually right when flagged, but a third are
-missed.
+The headline comes mostly from `brokeninsulator` and `brokenpart`. `defect` looks like the weak
+spot (recall 0.375), but the confusion matrix shows that 9 of the 16 defects were labelled
+`brokenpart` and only 2 were missed completely, so most defect photos are still flagged as faulty.
+The real confusion is between broken and healthy strings: 47 broken strings were called a plain
+`insulator` and 26 healthy ones were called broken. The model judges the whole string poorly and
+catches damage mainly through the `brokenpart` box.
 
 ## Cost matrix and operating point
 
@@ -138,11 +140,11 @@ missed.
 | Review | 0.63 | 45 s of an engineer at €50/h |
 | Base rate | 2% | assumed share of damaged insulators on a real line |
 
-Because the test set is 86% faulty, I measure error rates on faulty and healthy photos separately
-and reweight them to the 2% base rate. Sweeping the threshold, the cheapest "model alone" setting
-is **0.83 (€196,969 per 1,000 photos)**. It's high because 98% of insulators are healthy, so even a
-few false alarms add up to many wasted trips. The result is most sensitive to the 20% failure
-probability and the 2% base rate.
+I tested how sensitive this is. The review band [0.04, 0.96) does not change at all for a
+false-negative cost anywhere between €2,000 and €20,000, or a base rate between 0.5% and 5%,
+because it is set by the one engineer's capacity rather than by the costs. Only the model-alone
+threshold moves (from 0.83 to 0.96) if the false-negative cost drops below about €10,000 or the
+base rate below 1%. So the choice is robust to my two least certain assumptions.
 
 ## What a person still has to check
 
