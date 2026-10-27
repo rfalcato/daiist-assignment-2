@@ -1,69 +1,110 @@
 # Assignment 2 Report
 
-*Delete this italic guidance as you fill in each section. You'll be asked to
-defend any of this without your code in front of you. Write only what you
-can actually explain.*
-
 - **Name**:
 - **Student ID**:
 - **Email**:
 - **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A | BDBA 3A]
 
+> Scaffold only. Every `✍️` is yours to write in your own words (course AI policy).
+> Numbers come from `artifacts/` after `uv run python main.py train`.
+
 ## Business problem, and the cost of being wrong
 
-*The decision this model supports, who or what acts on it, and what happens
-when it's wrong in each direction. Be concrete about the asymmetry: which
-mistake is worse, roughly by how much, and why. Everything downstream (your
-threshold, how much you send to a person, which metric you care about) has to trace
-back to this section.*
+- **Decision:** a drone inspects a power line and photographs each insulator string. Each photo is PASS (leave in service), ENGINEER REVIEW, or DISPATCH (send a repair crew to the tower).
+- **Who acts:** ✍️
+- **False negative (damaged insulator passed):** ✍️ what happens and roughly how many €
+- **False positive (healthy insulator, crew sent):** ✍️
+- **Why one is worse and by roughly how much:** ✍️ (ratio cost_fn / cost_fp)
 
 ## Dataset
 
-*Workspace / project / version on Roboflow Universe, and the link. What one
-image represents, what the classes are, and why this dataset actually serves
-the problem above rather than merely resembling it.*
+- **Roboflow Universe:** workspace `insulators-ljwyo`, project `insulators-c4gwk`, **version 1**
+- **Link:** https://universe.roboflow.com/insulators-ljwyo/insulators-c4gwk/dataset/1
+- **License:** CC BY 4.0. Downloaded as-is, not forked.
+- **Classes:** insulator, defect, brokeninsulator, brokenpart. Positive = any of defect / brokeninsulator / brokenpart.
+- **What one image is:** ✍️
+- **Why it serves the decision (and where it only resembles it):** ✍️
+
+### Re-split (important)
+The published v1 has **958 train / 141 valid / 0 test**, and filenames show pre-augmented copies of the same photo (`160605_JPG`, `160605d_JPG`, `160605v_JPG`…). `train.py` pools all images, groups copies by photo id, and makes a seeded 70/15/15 split by photo, so no photo appears in two splits. Result: `artifacts/dataset_stats.json → resplit`, per-image mapping: `artifacts/split_manifest.csv`.
+
+✍️ Why you did this, and how many photos were leaking across the published train/valid split.
 
 ## What the dataset's composition implies
 
-*Instances per class, train/val/test sizes, typical object size relative to the
-image. Then the interpretation: which per-class numbers will be too thin to
-trust, whether the test split resembles the images you'd really see, and what
-you therefore can't conclude from your results.*
+Source: `artifacts/dataset_stats.json` (also shown in the dashboard's Dataset tab).
+
+| split | images | insulator | defect | brokeninsulator | brokenpart |
+|---|---|---|---|---|---|
+| train | | | | | |
+| valid | | | | | |
+| test  | | | | | |
+
+Object size (median box % of image): ✍️
+
+✍️ Interpretation. Points to consider: how many test images per class, which numbers are too thin to trust, the share of faulty vs healthy photos compared with a real line, the fact that "copies" are augmentations rather than new photos (so the effective sample size is smaller), and what you therefore cannot conclude.
 
 ## Finetuning and baselines
 
-*Which model and task (detection or classification) and why. A results table on
-the same test split: your finetuned model, the pretrained COCO model zero-shot,
-and a trivial baseline. What changed, and whether the gap is as large as you
-expected.*
+- **Model:** yolo11n detection, finetuned from the COCO checkpoint. Why detection and why n: ✍️
+- **Where trained / settings:** see `artifacts/operating_point.json → train_settings` ✍️ (machine, epochs, imgsz, batch, minutes)
+
+| model (same test split) | AP50 | mAP50-95 | image-level AUC | best cost / 1,000 |
+|---|---|---|---|---|
+| Finetuned yolo11n | | | | |
+| COCO yolo11n zero-shot | 0 | 0 | | |
+| Trivial: predict nothing | 0 | 0 | 0.5 | |
+
+(`artifacts/metrics.json`, `artifacts/baselines_decision.csv`)
+
+✍️ What changed, and was the gap what you expected?
 
 ## Per-class evaluation and failure modes
 
-*Per-class AP50, or per-class precision/recall and the confusion matrix.
-Which class carries the headline number, which one is dragging, and what the
-model actually confuses with what. Show where it breaks, not just that it
-works.*
+| class | precision | recall | AP50 | mAP50-95 |
+|---|---|---|---|---|
+| insulator | | | | |
+| defect | | | | |
+| brokeninsulator | | | | |
+| brokenpart | | | | |
+
+Confusion matrix: `artifacts/test_confusion_matrix.png`
+
+✍️ Which class carries the headline number, which drags it down, and what gets confused with what (especially faults predicted as background or plain insulator, which are your FNs).
 
 ## Cost matrix and operating point
 
-*Your euro cost for each kind of error and where each figure came from. The
-base rate you assumed. The cost-against-threshold sweep, and the operating
-point you chose. State the assumption that would most change your answer if it
-were wrong.*
+| outcome | € | where the figure comes from |
+|---|---|---|
+| FN | | ✍️ |
+| FP | | ✍️ |
+| TP | | ✍️ |
+| TN | | ✍️ |
+| Base rate | | ✍️ |
+
+Sweep: `artifacts/cost_sweep.csv` (curve in the dashboard). Chosen single threshold: ✍️
+
+✍️ The assumption that most changes the answer, and at what value it flips (use the dashboard's cost inputs to find it).
 
 ## What a person still has to check
 
-*Your two thresholds, and what share of cases they send to a person. How many
-that is per day, how long one takes to check, and how many people that needs.
-Is that realistic? Then your design priced against the three alternatives:
-doing nothing, having a person check everything, and letting the model decide
-on its own.*
+- Thresholds: t_low = ✍️, t_high = ✍️ (`operating_point.json → band_chosen`)
+- Share sent to review, reviews/day, minutes each, people needed: ✍️
+- Realistic? ✍️
+
+| strategy | € / 1,000 | € / day | reviewers |
+|---|---|---|---|
+| Do nothing | | | |
+| Engineer reviews every photo | | | |
+| Model alone | | | |
+| Model + review band | | | |
+
+(`artifacts/strategies.csv`)
 
 ## Limitations & next steps
 
-*Real limitations you found, and concretely how you'd address each one with
-more time or data. Not generic hedging.*
+✍️
 
 ## Generative AI use disclosure
 
-*Per the syllabus AI Policy: what you used and how, or "no AI content used."*
+✍️ Example of what to state: which tool, what it was used for (e.g. pipeline and dashboard code, dataset search), and that the cost figures, thresholds and analysis are your own.

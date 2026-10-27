@@ -1,0 +1,31 @@
+{
+  "_note": "Every number here is a business assumption YOU must defend in REPORT.md. Edit, then rerun `uv run python main.py train` (or just restart the app: it recomputes live). Unit of decision: one drone photo of one insulator string.",
+
+  "positive_classes": ["defect", "brokeninsulator", "brokenpart"],
+  "_positive_why": "Positive = the photo shows a damaged insulator. That is the case where a crew must go out.",
+
+  "base_rate": 0.02,
+  "_base_rate_why": "PLACEHOLDER. Share of insulator strings on a real line that are actually damaged. The test split is mostly faulty photos, nothing like a real line; the cost maths reweights to this number.",
+
+  "cost_fn_eur": 5000.0,
+  "_cost_fn_why": "PLACEHOLDER. Missed fault: the insulator stays until the next inspection cycle. Expected cost = P(flashover/outage before then) x (unplanned outage + emergency repair + penalties/wildfire risk).",
+
+  "cost_fp_eur": 800.0,
+  "_cost_fp_why": "PLACEHOLDER. False dispatch: crew + truck/climbing team sent to a tower for nothing (half a day of a 2-3 person crew).",
+
+  "cost_tp_eur": 800.0,
+  "_cost_tp_why": "Correct dispatch still pays the crew trip; the avoided loss is captured by NOT paying cost_fn. (The insulator part is paid either way, so it is left out.)",
+
+  "cost_tn_eur": 0.0,
+
+  "cases_per_day": 2000,
+  "_cases_per_day_why": "PLACEHOLDER. Insulator photos one drone team captures per day of inspection.",
+
+  "review_seconds": 20,
+  "_review_seconds_why": "PLACEHOLDER. An engineer zooms into one flagged photo and decides.",
+
+  "reviewer_hourly_eur": 45.0,
+  "reviewer_productive_hours": 6.0,
+  "reviewers_available": 1,
+  "_reviewers_why": "Engineers you can actually assign to photo review; the chosen review band is constrained to fit this."
+}
